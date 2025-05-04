@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Log4j2
 public class PostEventConsumer {
-    @KafkaListener(topics = "${spring.kafka.post-service-topic-name}", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "${spring.kafka.post-events-topic-name}", groupId = "${spring.kafka.consumer.group-id}")
     public void consumePostEvent(String message) {
         log.info("Received post event from Kafka: {}", message);
     }
