@@ -1,4 +1,4 @@
-package com.chatterbox.timelineservice.model;
+package com.chatterbox.timelineservice.record;
 
 import java.time.Instant;
 
