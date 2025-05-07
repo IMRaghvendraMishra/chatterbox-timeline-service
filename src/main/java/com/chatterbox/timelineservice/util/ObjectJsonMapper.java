@@ -1,6 +1,6 @@
 package com.chatterbox.timelineservice.util;
 
-import com.chatterbox.timelineservice.model.Post;
+import com.chatterbox.timelineservice.record.Post;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

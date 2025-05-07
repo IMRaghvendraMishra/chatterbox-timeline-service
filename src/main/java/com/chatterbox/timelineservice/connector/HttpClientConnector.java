@@ -1,7 +1,7 @@
 package com.chatterbox.timelineservice.connector;
 
 import com.chatterbox.timelineservice.exception.PostException;
-import com.chatterbox.timelineservice.model.Post;
+import com.chatterbox.timelineservice.record.Post;
 import com.chatterbox.timelineservice.util.ObjectJsonMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
