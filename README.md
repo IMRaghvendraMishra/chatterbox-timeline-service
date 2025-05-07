@@ -18,7 +18,7 @@ The **Timeline Service** is one of the core microservices in the ChatterBox plat
 
 ## 📡 Exposed API
 
-### `GET /timeline/{userId}`
+### `GET /timeline/{username}`
 Returns a list of recent posts by users followed by the given user.
 
 #### Sample Response:
@@ -26,7 +26,7 @@ Returns a list of recent posts by users followed by the given user.
 [
   {
     "postId": "p1",
-    "userId": "user123",
+    "username": "user123",
     "content": "Hello world!",
     "timestamp": "2025-04-28T10:15:30Z"
   }

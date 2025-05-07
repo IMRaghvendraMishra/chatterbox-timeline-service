@@ -17,7 +17,7 @@ import java.time.Instant;
 @EqualsAndHashCode
 public class Post {
     private String postId;
-    private String userId;
+    private String username;
     private String content;
     private Instant timestamp;
 }

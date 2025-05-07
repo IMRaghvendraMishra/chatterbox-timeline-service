@@ -17,8 +17,8 @@ public class TimelineController {
 
     private final TimelineService timelineService;
 
-    @GetMapping("/{userId}")
-    public List<Post> getTimeline(@PathVariable String userId) {
-        return timelineService.getUserTimeline(userId);
+    @GetMapping("/{username}")
+    public List<Post> getTimeline(@PathVariable String username) {
+        return timelineService.getUserTimeline(username);
     }
 }
