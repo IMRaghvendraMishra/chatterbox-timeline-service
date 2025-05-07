@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 9096
 
 spring:
   application:
@@ -12,3 +12,8 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     post-events-topic-name: chatterbox-post-events
+
+timeline-service:
+  connector:
+    post-service:
+      get-posts-by-username-endpoint: http://localhost:9094/api/posts/user/
