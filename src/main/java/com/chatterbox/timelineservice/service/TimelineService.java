@@ -1,24 +1,27 @@
 package com.chatterbox.timelineservice.service;
 
+import com.chatterbox.timelineservice.connector.HttpClientConnector;
 import com.chatterbox.timelineservice.model.Post;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class TimelineService {
 
+    private final HttpClientConnector httpClientConnector;
+
     public List<Post> getUserTimeline(String username) {
-        // TODO:
-        // invoke follower service get username's following and generate feed of top 20 post
-        // 20 could be configurable?
-        // Mock posts
-        // Communicates with Follower Service to get list of followed users
-        //Queries Post Service for recent posts from followed users
-        return List.of(
-                new Post("p1", username, "First post!", Instant.now()),
-                new Post("p2", username, "Second post!", Instant.now())
-        );
+        return httpClientConnector.getPosts(username)
+                .map(posts -> posts.stream()
+                        .sorted(Comparator.comparing(Post::timestamp).reversed()) // Most recent first
+                        .limit(10)
+                        .collect(Collectors.toList()))
+                .orElse(Collections.emptyList());
     }
 }
